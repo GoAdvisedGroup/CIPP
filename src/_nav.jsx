@@ -197,13 +197,13 @@ const _nav = [
     items: [
       {
         component: CNavItem,
-        name: 'Edit Individual Standards',
+        name: 'Edit Standards',
         to: '/tenant/standards/list-applied-standards',
       },
       {
         component: CNavItem,
-        name: 'Standards Wizard',
-        to: '/tenant/standards/apply-standard',
+        name: 'List Standards',
+        to: '/tenant/standards/list-standards',
       },
       {
         component: CNavItem,
@@ -283,16 +283,6 @@ const _nav = [
         name: 'GDAP Roles',
         to: '/tenant/administration/gdap-roles',
       },
-      // {
-      //   component: CNavItem,
-      //   name: 'Migration Wizard',
-      //   to: '/tenant/administration/gdap',
-      // },
-      // {
-      //   component: CNavItem,
-      //   name: 'GDAP Migration Status',
-      //   to: '/tenant/administration/gdap-status',
-      // },
     ],
   },
   {
