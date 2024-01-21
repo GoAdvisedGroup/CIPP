@@ -124,13 +124,13 @@ const _nav = [
       },
       {
         component: CNavItem,
-        name: 'Alerts Wizard',
-        to: '/tenant/administration/alertswizard',
+        name: 'Alerts (Classic)',
+        to: '/tenant/administration/alertsqueue',
       },
       {
         component: CNavItem,
-        name: 'Alerts Configuration',
-        to: '/tenant/administration/alertsqueue',
+        name: 'Alert Rules',
+        to: '/tenant/administration/AlertRules',
       },
       {
         component: CNavItem,
@@ -238,6 +238,11 @@ const _nav = [
         component: CNavItem,
         name: 'Deploy CA Policies',
         to: '/tenant/conditional/deploy',
+      },
+      {
+        component: CNavItem,
+        name: 'CA Vacation Mode',
+        to: '/tenant/conditional/deploy-vacation',
       },
       {
         component: CNavItem,
