@@ -144,6 +144,11 @@ const _nav = [
       },
       {
         component: CNavItem,
+        name: 'Secure Score',
+        to: '/tenant/administration/securescore',
+      },
+      {
+        component: CNavItem,
         name: 'App Consent Requests',
         to: '/tenant/administration/app-consent-requests',
       },
@@ -156,6 +161,11 @@ const _nav = [
         component: CNavItem,
         name: 'Tenant Offboarding',
         to: '/tenant/administration/tenant-offboarding-wizard',
+      },
+      {
+        component: CNavItem,
+        name: 'Partner Relationships',
+        to: '/tenant/administration/partner-relationships',
       },
     ],
   },
@@ -603,6 +613,11 @@ const _nav = [
         name: 'Quarantine',
         to: '/email/administration/quarantine',
       },
+      {
+        component: CNavItem,
+        name: 'Tenant Allow/Block Lists',
+        to: '/email/administration/tenant-allow-block-lists',
+      },
     ],
   },
   {
@@ -689,6 +704,25 @@ const _nav = [
         component: CNavItem,
         name: 'Templates',
         to: '/email/spamfilter/list-templates',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: ' Room Management',
+    section: 'Email & Exchange',
+    to: '/rooms/management',
+    icon: <FontAwesomeIcon icon={faToolbox} className="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Rooms',
+        to: '/rooms/management/list-rooms',
+      },
+      {
+        component: CNavItem,
+        name: 'Room Lists',
+        to: '/rooms/management/room-lists',
       },
     ],
   },
