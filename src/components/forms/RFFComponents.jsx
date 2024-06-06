@@ -253,6 +253,54 @@ RFFCFormInputArray.propTypes = {
   ...sharedPropTypes,
 }
 
+export const RFFCFormInputList = ({ name, label, className = 'mb-3' }) => {
+  return (
+    <>
+      <FieldArray name={name}>
+        {({ fields }) => (
+          <div>
+            <div className="mb-2">
+              {label && (
+                <CFormLabel className="me-2" htmlFor={name}>
+                  {label}
+                </CFormLabel>
+              )}
+              <CButton
+                onClick={() => fields.push({ Key: '', Value: '' })}
+                className="circular-button"
+                title={'+'}
+              >
+                <FontAwesomeIcon icon={'plus'} />
+              </CButton>
+            </div>
+            {fields.map((name, index) => (
+              <div key={name} className={className}>
+                <div>
+                  <Field name={`${name}`} component="input">
+                    {({ input, meta }) => {
+                      return <CFormInput placeholder="Value" {...input} className="mb-2" />
+                    }}
+                  </Field>
+                </div>
+                <CButton
+                  onClick={() => fields.remove(index)}
+                  className={`circular-button`}
+                  title={'-'}
+                >
+                  <FontAwesomeIcon icon={'minus'} />
+                </CButton>
+              </div>
+            ))}
+          </div>
+        )}
+      </FieldArray>
+    </>
+  )
+}
+RFFCFormInputList.propTypes = {
+  ...sharedPropTypes,
+}
+
 export const RFFCFormRadio = ({
   name,
   label,
@@ -293,7 +341,6 @@ export const RFFCFormRadioList = ({
   name,
   options,
   className = 'mb-3',
-  disabled = false,
   onClick,
   inline = false,
 }) => {
@@ -312,7 +359,6 @@ export const RFFCFormRadioList = ({
                       onChange={input.onChange}
                       type="radio"
                       {...option}
-                      disabled={disabled}
                       onClick={onClick}
                       inline={inline}
                     />
@@ -589,7 +635,11 @@ export const RFFSelectSearch = ({
                 {...props}
               />
             )}
-            {meta.error && meta.touched && <span className="text-danger">{meta.error}</span>}
+            {meta.error && meta.touched && (
+              <span className="text-danger">
+                {typeof meta.error === 'object' ? Object.values(meta.error).join('') : meta.error}
+              </span>
+            )}
           </div>
         )
       }}
